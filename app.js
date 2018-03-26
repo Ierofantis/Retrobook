@@ -7,7 +7,7 @@ var multer  = require('multer');
 // var formidable = require('formidable');
 // var util = require('util');
 // var fs   = require('fs-extra');
-// var qt   = require('quickthumb');
+// var qt   = require('quickthumb') ;
 
 var expressSession = require('express-session');
 var cookieParser = require('cookie-parser'); 
