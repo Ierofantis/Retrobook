@@ -1,30 +1,22 @@
+require('dotenv').config();
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
-var multer  = require('multer');
 var flash = require('connect-flash');
 var methodOverride = require('method-override')
-// var formidable = require('formidable');
-// var util = require('util');
-// var fs   = require('fs-extra');
-// var qt   = require('quickthumb');
+
 
 var expressSession = require('express-session');
-var cookieParser = require('cookie-parser'); 
+var cookieParser = require('cookie-parser');
 
 app.use(methodOverride('_method'));
 app.use(cookieParser('bla'));
-app.use(expressSession({secret:'bla2'}));
+app.use(expressSession({ secret: 'bla2' }));
 
-//app.use(qt.static(__dirname + '/'));
+mongoose.connect(`mongodb://${process.env.USER}:${process.env.PASSWORD}@ds061797.mlab.com:61797/retrobook`, function (error) {
 
-var routes = require( './routes' );
-var retro    = require("./models/signup");
-
-mongoose.connect("mongodb://localhost/bla3", function (error){
-	
 	if (error) console.error(error);
 	else console.log("mongo connected")
 
@@ -43,7 +35,7 @@ app.use(flash());
 
 require('./routes.js')(app);
 
-app.listen(app.get("port"), function() {
+app.listen(app.get("port"), function () {
 	console.log("Server started on port " + app.get("port"));
 });
 
