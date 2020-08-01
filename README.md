@@ -1,14 +1,8 @@
-# Retrobook
-The complete code is on https://github.com/TheodorePa 
+https://retropeople.herokuapp.com/
 
-# Local view
+#For local use
+# Retrobook
 Just clone/download it and enter on command line where you have the directory(ex. C:\User\Retrobook): node app or nodemon app
 and on another command line go where you have mongodb and enter: mongod 
-
-# Live view
-You can also view the uncompleted version on https://retropeople.herokuapp.com/
-
-# Uncompleted!
-There are many updates and integrations that need to be done!
 
 ![alt tag](https://i.imgur.com/8r4kcBF.jpg)

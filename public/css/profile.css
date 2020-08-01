@@ -1,8 +1,19 @@
+
+
 body{
  background-color: #C2B186;
 }
 h1{
   color:#fff;
+}
+h2{
+  color:#fff;
+}
+#sub{
+  margin-top:15px;
+}     
+#prive{
+  margin-top:30px;
 }
 #center{
   padding-top:450px;
@@ -12,7 +23,7 @@ p{
 }
 a:hover, a:visited, a:link, a:active
 {
-    text-decoration: none;
+  text-decoration: none;
 }
 #f1_container {
   position: relative;
@@ -23,10 +34,10 @@ a:hover, a:visited, a:link, a:active
   cursor:pointer;
 }
 #f1_container {
--webkit-perspective: 1000px;
--moz-perspective: 1000px;
--o-perspective: 1000px;
-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
 }
 #f1_card {
   width: 100%;
@@ -88,4 +99,4 @@ img.frame {
   img.frame { 
     border-width: 0px;
     width: 100%; }
-}
+  }

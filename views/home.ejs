@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Welcome</title>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="/js/photo.js"></script>  
-<link href="/css/profile.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>Welcome</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/photo.js"></script>  
+	<script src="/js/home.js"></script>
+
+	<link href="/css/members.css" rel="stylesheet" type="text/css">
+	<link href="/css/home.css" rel="stylesheet" type="text/css">
+	<link href="/css/nav.css" rel="stylesheet" type="text/css">
 </head>
- 
+<% include partials/headerhome.ejs %>
 <body>
 
-<div class= " container ">
-  <div class= " row ">
-    <div class="col-md-4"></div>
-       <div class="col-md-4">
-      <div id="f1_container" class="hover">
-        <div id="f1_card" class="shadow" onclick="toggle()">
-          <div class="front face">
-            <img  src="" class="frame"/>
-          </div>
-          <div class="back face center">
-            <h1>T.P</h1>
-            <p>Write Something</p>
-          </div>
-        </div>
-      </div>
-    </div>
+	<center><h1>Writings on The Wall</h1></center>/
+	
 
+	<% user.forEach(function(users) { %>
 
+	<div class="wrap">
+		<div class="s1_3">
+			<div class="in">
+				<form method="post" action="/profile/<%= users.name %>/home/<%= users.id %>">
+					<input type="hidden" name="_method" value="delete"/>
+					<h3> <a href="/profile/<%= users.name %>"><%= users.name %></a> 
 
+						<h4><%= users.write %></h4>   
+						<%if (users.name===name)  { %>
+						<button id="destroy" type="submit" class="btn-danger center-block"> Delete</button> <% } %>
+					</form>
+				</div>
+			</div>
+		</div>
 
-</div>
+		<% }) %>
+
+	</div>
+	<img src='https://1.bp.blogspot.com/-jXS_iaWZwUE/Td6GWOMdc_I/AAAAAAAAATI/WjlaHcy-R5g/s1600/wall+02.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 </body>
 </html>
